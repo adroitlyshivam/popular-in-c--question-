@@ -1,0 +1,30 @@
+  #include <string>
+#include <algorithm>
+input- Hello World
+output-Olleh Dlrow
+
+#include <iostream>
+
+int main()
+{
+    std::string s = "Hello World";
+    
+    int i = 0;
+    int j = 0;
+    
+    while (i <= s.length()) {
+        if (i == s.length() || s[i] == ' ') {
+            s[j]=tolower(s[j]);
+            s[i-1]=toupper(s[i-1]);
+            std::reverse(s.begin() + j, s.begin() + i);
+              
+             
+            j = i + 1;
+        }
+        i++;
+    }
+    
+    std::cout << s << std::endl;
+    
+    return 0;
+}
